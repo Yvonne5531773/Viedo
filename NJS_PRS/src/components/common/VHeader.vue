@@ -21,13 +21,13 @@
         </el-dropdown>
       <search class="msearch"></search>
   	</div>
-    <!--<Menu></Menu>-->
+    <!--<VMenu></VMenu>-->
   </div>
 </template>
 
 <script>
 import Search from 'components/common/Search'
-import Menu from 'components/common/Menu'
+import VMenu from 'components/common/VMenu'
 export default {
 
     data() {
@@ -39,7 +39,7 @@ export default {
 
   components: {
     Search,
-    Menu
+    VMenu
   }
 }
 </script>

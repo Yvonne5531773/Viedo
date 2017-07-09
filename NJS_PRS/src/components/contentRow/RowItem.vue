@@ -2,8 +2,7 @@
 	<li class="item-li tab-box-shadow" >
 		<div class="v m300">
 			<!-- 上部分 -->
-			<a class="preview cover-preview" target="_blank">
-
+			<a class="preview cover-preview" target="_blank" :href="item.coverUrl">
 				<!-- 背景图片 -->
 				<div class=image>
 					<img class="front face" v-lazy="item.coverImage" style='background-size:cover;'/>
@@ -17,19 +16,18 @@
 						</div>
 					</div>
 				</div>
-				<!-- 内容预览 -->
+
 				<div class="back">
 					<div>
 					</div>
 				</div>
-
 				<!--<div class="fore">-->
 					<!--<span data-loading="false"></span>-->
 					<!--<div class="bar">-->
 						<!--<div></div>-->
 					<!--</div>-->
 				<!--</div>-->
-				<!-- 视频时间 -->
+
 				<div class="x">
 					<b class="x2">{{item.duration}}</b>
 				</div>

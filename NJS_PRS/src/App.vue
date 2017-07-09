@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!--<TopContainer></TopContainer>-->
-    <Header></Header>
+    <VHeader></VHeader>
     <!--<div class="fillcontain">-->
     <!--<el-row style="height: 100%;">-->
       <!--<el-col :span="3"  style="min-height: 100%; background-color: #324057;">-->
@@ -14,11 +14,11 @@
         <!--&lt;!&ndash;</el-menu>&ndash;&gt;-->
       <!--</el-col>-->
       <!--<el-col :span="21" style="height: 100%;overflow: auto;">-->
-        <!--<Content :rows="rows"></Content>-->
+        <!--<VContent :rows="rows"></VContent>-->
       <!--</el-col>-->
     <!--</el-row>-->
     <!--</div>-->
-    <Content :rows="rows"></Content>
+    <VContent :rows="rows"></VContent>
     <NavSide :options="options" v-on:change="isShowMask"></NavSide>
     <div class="wnd-mask" ref="mask" v-show="showMask"></div>
   </div>
@@ -26,8 +26,8 @@
 
 <script>
 import TopContainer from 'components/common/TopContainer.vue'
-import Header from 'components/common/Header.vue'
-import Content from 'components/content/Content.vue'
+import VHeader from 'components/common/VHeader.vue'
+import VContent from 'components/content/VContent.vue'
 import NavSide from 'components/nav/NavSide'
 
 import { mapGetters } from 'vuex'
@@ -35,8 +35,8 @@ export default {
   name: 'app',
   components: {
     TopContainer,
-    Header,
-    Content,
+    VHeader,
+    VContent,
     NavSide
   },
   mounted() {

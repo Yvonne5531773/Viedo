@@ -2,7 +2,7 @@
 	<div class="menu">
 		<div class="menu-wrapper">
 			<ul class="nav-menu">
-				<!--<MenuItem  v-for="i in classify" :item="i"></MenuItem>-->
+				<!--<VMenuItem  v-for="i in classify" :item="i"></VMenuItem>-->
 			</ul>
 			<div class="menu-r">
 				<!--<a href="" target="_blank" href="http://search.bilibili.com/all?keyword=%E8%B9%A6%E8%BF%AA" title="蹦迪" class="random-p">-->
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import MenuItem from 'components/common/MenuItem'
+import VMenuItem from 'components/common/VMenuItem'
 export default {
 	data() {
 		return {
@@ -97,7 +97,7 @@ export default {
 		}
 	},
 	components: {
-		MenuItem
+		VMenuItem
 	}
 }
 </script>
