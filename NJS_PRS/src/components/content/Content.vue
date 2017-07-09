@@ -6,31 +6,31 @@
 					<!--<Banner></Banner>-->
 				</div>
 				<div class="b-r">
-					<!--<BContentTop></BContentTop>-->
+					<!--<ContentTop></ContentTop>-->
 				</div>
 			</div>
 		</div>
 
 		<div class="container-row">
-			<!--<BPromote></BPromote>-->
+			<!--<Promote></Promote>-->
 		</div>
 
 		<div class="container-row">
-			<!--<BLive></BLive>-->
+			<!--<Live></Live>-->
 		</div>
 		<!-- 各分类具体内容 -->
 		<div class="container-row"  v-for="(row, index) in rows" :id="row.b_id" v-if='rows'> 
-			<BContentRow :category="row.category" :categoryId="row.categoryId" :row="row.item"></BContentRow>
+			<ContentRow :category="row.category" :categoryId="row.categoryId" :row="row.item"></ContentRow>
 		</div>
 	</div>
 </template>
 
 <script>
 import Banner from 'components/banner/Banner'
-import BContentTop from 'components/contentTop/BContentTop'
-import BPromote from 'components/promote/BPromote'
-import BLive from 'components/live/BLive'
-import BContentRow from 'components/contentRow/BContentRow'
+import ContentTop from 'components/contentTop/ContentTop'
+import Promote from 'components/promote/Promote'
+import Live from 'components/live/Live'
+import ContentRow from 'components/contentRow/ContentRow'
 
 import { mapGetters } from 'vuex'
 export default {
@@ -41,10 +41,10 @@ export default {
 	},
 	components: {
 		Banner,
-		BContentTop,
-		BPromote,
-		BLive,
-		BContentRow
+		ContentTop,
+		Promote,
+		Live,
+		ContentRow
 	}
 }
 </script>

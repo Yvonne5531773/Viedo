@@ -2,14 +2,14 @@
 	<div id="main" class="b-body">
 		<div ref="listWrapper">
 			<ul class="vidbox v-list square-scene">
-				<BRowItem :item="item" v-for="(item, index) in list" v-if='list'></BRowItem>
+				<RowItem :item="item" v-for="(item, index) in list" v-if='list'></RowItem>
 			</ul>
 		</div>
 	</div>
 </template>
 
 <script>
-import BRowItem from 'components/contentRow/BRowItem'
+import RowItem from 'components/contentRow/RowItem'
 import { dataApi } from 'api'
 
 export default {
@@ -47,7 +47,7 @@ export default {
         }
     },
 	components: {
-		BRowItem
+		RowItem
 	}
 }
 </script>

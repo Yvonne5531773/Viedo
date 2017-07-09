@@ -24,12 +24,12 @@
 				</div>
 			</div>
 		</div>
-		<BRowRankBody :categoryId="categoryId" :isOrigin="isOrigin" :isWeek="isWeek"></BRowRankBody>
+		<RowRankBody :categoryId="categoryId" :isOrigin="isOrigin" :isWeek="isWeek"></RowRankBody>
 	</div>
 </template>
 
 <script>
-import BRowRankBody from 'components/contentRow/BRowRankBody'
+import RowRankBody from 'components/contentRow/RowRankBody'
 import axios from 'axios'
 export default {
 	props: {
@@ -47,7 +47,7 @@ export default {
 		}
 	},
 	components: {
-		BRowRankBody
+		RowRankBody
 	},
 	methods: {
 		selectedItem1() {

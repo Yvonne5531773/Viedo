@@ -1,19 +1,19 @@
 <template>
 	<div class="b-section-body">
 		<div class="b-l">
-			<BRowHead :category="category" :row="row"></BRowHead>
-			<!--<BRowBody :row="row"></BRowBody>-->
+			<RowHead :category="category" :row="row"></RowHead>
+			<!--<RowBody :row="row"></RowBody>-->
 		</div>
 		<div class="b-r">
-			<!--<BRowRank :category="category" :categoryId="categoryId"></BRowRank>-->
+			<!--<RowRank :category="category" :categoryId="categoryId"></RowRank>-->
 		</div>
 	</div>
 </template>
 
 <script>
-import BRowHead from 'components/contentRow/BRowHead'
-//import BRowBody from 'components/contentRow/BRowBody'
-import BRowRank from 'components/contentRow/BRowRank'
+import RowHead from 'components/contentRow/RowHead'
+//import RowBody from 'components/contentRow/RowBody'
+import RowRank from 'components/contentRow/RowRank'
 import { mapGetters } from 'vuex'
 export default {
 	props: {
@@ -40,9 +40,9 @@ export default {
 		// this.$store.dispatch('getContentRank', this.categoryId)
 	},
 	components: {
-		BRowHead,
-//		BRowBody,
-		BRowRank
+		RowHead,
+//		RowBody,
+		RowRank
 	}
 }
 </script>

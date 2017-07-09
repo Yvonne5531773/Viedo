@@ -15,7 +15,7 @@
 			<div class="b-body" v-if="promotelist">
 				<ul class="rm-list">
 					<div>
-						<BPromoteItem v-for="item in promotelist" :promoteItem="item"></BPromoteItem>
+						<PromoteItem v-for="item in promotelist" :promoteItem="item"></PromoteItem>
 					</div>
 				</ul>
 			</div>
@@ -23,11 +23,11 @@
 	</div>
 </template>
 <script>
-import BPromoteItem from 'components/promote/BPromoteItem'
+import PromoteItem from 'components/promote/PromoteItem'
 import { mapGetters } from 'vuex'
 export default {
 	components: {
-		BPromoteItem
+		PromoteItem
 	},
 	computed: {
 		...mapGetters([

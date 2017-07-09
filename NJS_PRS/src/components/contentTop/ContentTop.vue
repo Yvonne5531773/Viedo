@@ -1,7 +1,7 @@
 <template>
 	<div class="top-list-wrapper">
 		<ul class="top-list" clearfix>
-			<BContentTopItem v-for="(item, index) in ranklist" :contentTop="item"></BContentTopItem>
+			<ContentTopItem v-for="(item, index) in ranklist" :contentTop="item"></ContentTopItem>
 		</ul>
 		<div class="prev" @click="now = now > 0 ? now -= 1 : now = 2">{{ this.pre = this.now === 0 ? '昨日' : this.now === 1 ? '三日' : '一周'}}</div>
     <div class="next" @click="now = now < 2 ? now += 1 : now = 0">{{ this.next = this.now === 0 ? '一周' : this.now === 1 ? '昨日' : '三日'}}</div>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import BContentTopItem from 'components/contentTop/BContentTopItem'
+import ContentTopItem from 'components/contentTop/ContentTopItem'
 import { mapGetters } from 'vuex'
 export default {
 	data() {
@@ -30,7 +30,7 @@ export default {
 		this.$store.dispatch('ranklist')
 	},
 	components: {
-		BContentTopItem
+		ContentTopItem
 	}
 }
 </script>

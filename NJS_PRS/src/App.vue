@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!--<TopContainer></TopContainer>-->
-    <BHeader></BHeader>
+    <Header></Header>
     <!--<div class="fillcontain">-->
     <!--<el-row style="height: 100%;">-->
       <!--<el-col :span="3"  style="min-height: 100%; background-color: #324057;">-->
@@ -14,30 +14,30 @@
         <!--&lt;!&ndash;</el-menu>&ndash;&gt;-->
       <!--</el-col>-->
       <!--<el-col :span="21" style="height: 100%;overflow: auto;">-->
-        <!--<BContent :rows="rows"></BContent>-->
+        <!--<Content :rows="rows"></Content>-->
       <!--</el-col>-->
     <!--</el-row>-->
     <!--</div>-->
-    <BContent :rows="rows"></BContent>
-    <BNavSide :options="options" v-on:change="isShowMask"></BNavSide>
+    <Content :rows="rows"></Content>
+    <NavSide :options="options" v-on:change="isShowMask"></NavSide>
     <div class="wnd-mask" ref="mask" v-show="showMask"></div>
   </div>
 </template>
 
 <script>
 import TopContainer from 'components/common/TopContainer.vue'
-import BHeader from 'components/common/BHeader.vue'
-import BContent from 'components/content/BContent.vue'
-import BNavSide from 'components/nav/BNavSide'
+import Header from 'components/common/Header.vue'
+import Content from 'components/content/Content.vue'
+import NavSide from 'components/nav/NavSide'
 
 import { mapGetters } from 'vuex'
 export default {
   name: 'app',
   components: {
     TopContainer,
-    BHeader,
-    BContent,
-    BNavSide
+    Header,
+    Content,
+    NavSide
   },
   mounted() {
     this.$store.dispatch('getContentRows')  //get content rows data

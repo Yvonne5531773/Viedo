@@ -11,7 +11,7 @@
 			<div class="r-list-body">
 				<div class="r-list-wrapper" ref="listWrapper">
 					<ul class="r-list-live" >
-						<BLiveRankItem v-for="(item, index ) in ranklist" :rank="item" :index="index"></BLiveRankItem>
+						<LiveRankItem v-for="(item, index ) in ranklist" :rank="item" :index="index"></LiveRankItem>
 					</ul>
 					<ul class="r-list-live">
 						<li class="no-data">
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import BLiveRankItem from 'components/live/BLiveRankItem'
+import LiveRankItem from 'components/live/LiveRankItem'
 export default {
 	data() {
 		return {
@@ -119,7 +119,7 @@ export default {
 		}
 	},
 	components: {
-		BLiveRankItem
+		LiveRankItem
 	}
 }
 </script>
@@ -222,7 +222,6 @@ export default {
 								vertical-align middle
 								width 20px
 								height 20px
-								background url(../../assets/images/state.png) no-repeat center -598px
 								margin-right 5px	
 						.mini-preview-wrapper
 							position relative

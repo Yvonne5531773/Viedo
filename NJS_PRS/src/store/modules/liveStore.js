@@ -2,12 +2,12 @@ import { liveApi } from 'api'
 import * as TYPE from '../actionType/liveType'
 
 const state = {
-	online_total: 0, //在线直播数
-	dynamic: 0, // 动态数
-	recommend: [], // 推荐列表
-	ranking: [], //排行
-	preview: [], // 为你推荐预览
-	recommendAnchor: [] //为你推荐
+	online_total: 0,
+	dynamic: 0,
+	recommend: [],
+	ranking: [],
+	preview: [],
+	recommendAnchor: []
 }
 
 const getters = {

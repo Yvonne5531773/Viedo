@@ -2,7 +2,7 @@
 	<div class="menu">
 		<div class="menu-wrapper">
 			<ul class="nav-menu">
-				<!--<BMenuItem  v-for="i in classify" :item="i"></BMenuItem>-->
+				<!--<MenuItem  v-for="i in classify" :item="i"></MenuItem>-->
 			</ul>
 			<div class="menu-r">
 				<!--<a href="" target="_blank" href="http://search.bilibili.com/all?keyword=%E8%B9%A6%E8%BF%AA" title="蹦迪" class="random-p">-->
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import BMenuItem from 'components/common/BMenuItem'
+import MenuItem from 'components/common/MenuItem'
 export default {
 	data() {
 		return {
@@ -97,7 +97,7 @@ export default {
 		}
 	},
 	components: {
-		BMenuItem
+		MenuItem
 	}
 }
 </script>
@@ -141,7 +141,6 @@ export default {
 					margin 3px 0
 					width 58px
 					height 44px
-					background url(../../assets/images/app-link.png) center center no-repeat
 					position relative
 					overflow visible
 					.mobile-p-box
@@ -151,7 +150,6 @@ export default {
 						width 259px
 						height 174px
 						right -20px
-						background url(../../assets/images/app-box.png) center center no-repeat
 						transition .2s
 						transition-property opacity
 						&.fade-enter-active, &.fade-leave
@@ -164,5 +162,5 @@ export default {
 							width 100px
 							height 100px
 							left 80px
-							background url(../../assets/images/app-qrcode.png) center center no-repeat
+
 </style>

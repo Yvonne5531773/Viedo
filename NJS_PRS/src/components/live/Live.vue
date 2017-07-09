@@ -29,25 +29,25 @@
 			<div class="b-body">
 				<ul class="v-list-live" v-if="recommend">
 					<li v-for="item in recommend">
-						<BLiveItem :live="item"></BLiveItem>
+						<LiveItem :live="item"></LiveItem>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="b-r">
-			<BLiveRank :ranklist="ranking" :preview="preview" :recommendAnchor="recommendAnchor"></BLiveRank>
+			<LiveRank :ranklist="ranking" :preview="preview" :recommendAnchor="recommendAnchor"></LiveRank>
 		</div>
 	</div>
 </template>
 
 <script>
-import BLiveItem from 'components/live/BLiveItem'
-import BLiveRank from 'components/live/BLiveRank'
+import LiveItem from 'components/live/LiveItem'
+import LiveRank from 'components/live/LiveRank'
 import { mapGetters } from 'vuex'
 export default {
 	components: {
-		BLiveItem,
-		BLiveRank
+		LiveItem,
+		LiveRank
 	},
 	computed: {
 		...mapGetters([

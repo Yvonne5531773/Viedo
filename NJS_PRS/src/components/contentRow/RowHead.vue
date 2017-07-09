@@ -16,12 +16,12 @@
 				更多<i class="b-icon b-icon-arrow-r"></i>
 			</a>
 		</div>
-		<BRowBody :api="api"></BRowBody>
+		<RowBody :api="api"></RowBody>
 	</div>
 </template>
 
 <script>
-import BRowBody from 'components/contentRow/BRowBody'
+import RowBody from 'components/contentRow/RowBody'
 
 export default {
     data() {
@@ -75,7 +75,7 @@ export default {
 		}
 	},
     components: {
-        BRowBody
+        RowBody
     }
 }
 </script>
