@@ -1,6 +1,6 @@
 import { contentApi, contentrankApi } from 'api'
 import * as TYPE from '../actionType/contentType'
-
+import _ from 'lodash'
 
 const state = {
     sortKeys: ['tv', 'movie', 'zy', 'dm', 'live',],
@@ -32,13 +32,23 @@ const actions = {
 	getContentRows({commit, state, rootState}) {
 		rootState.requesting = true
 		commit(TYPE.CONTENT_REQUEST)
-		contentApi.content().then((response) => {
-			console.log('response ', response)
+		contentApi.contentByPost().then((response) => {
+			console.log('getContentRows contentByPost response ', response)
 			rootState.requesting = false
-			commit(TYPE.CONTENT_SUCCESS, response)
-		}, (error) => {
-			rootState.requesting = false
-			commit(TYPE.CONTENT_FAILURE)
+			if(_.isEmpty(response.err))
+				commit(TYPE.CONTENT_SUCCESS, response)
+			else {
+                contentApi.contentByJsonp().then((response) => {
+                    console.log('getContentRows contentByJsonp response ', response)
+                    rootState.requesting = false
+                    if(_.isEmpty(response.err))
+                        commit(TYPE.CONTENT_SUCCESS, response)
+                    else {
+                        rootState.requesting = false
+                        commit(TYPE.CONTENT_FAILURE)
+                    }
+                })
+            }
 		})
 	},
 	getContentRank({commit, state, rootState}, categoryId) {

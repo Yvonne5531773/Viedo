@@ -51,12 +51,17 @@ export default {
     methods: {
         getItemData() {
             if(!_.isEmpty(this.api)){
-                dataApi.data(this.api).then((response) => {
-                    console.log('getItemData response',response.list)
-                    this.list = response.list;
+                dataApi.dataByPost(this.api).then((response) => {
+                    console.log('getItemData dataByPost response ', response.list)
+                    if(_.isEmpty(response.err))
+                        this.list = response.list;
+                    else {
+                        dataApi.dataByJsonp(this.api).then((response) => {
+                            console.log('getItemData dataByJsonp response ', response.list)
+                            if(_.isEmpty(response.err)) this.list = response.list;
+                        })
+                    }
                 })
-			}else{
-
 			}
         }
     },

@@ -67,14 +67,33 @@ var safeJSONP = (function(){
 
 // 具体内容 saveJsonp
 export const contentApi = {
-    content() {
+    contentByPost() {
         return new Promise(function (resolve, reject) {
             safeJSONP({url:url.content}, function (success, data) {
+                console.log('in contentApi success', success)
                 console.log('in contentApi', data)
-                if(data){
+                if(success){
                     resolve(data)
                 }else{
-                    reject({})
+                    reject({err: 'have error'})
+                }
+            })
+        }).then((response) => {
+            console.log('response', response)
+            return response.data
+        }, function(err){
+            console.log('err', err)
+            return err;
+        })
+    },
+    contentByJsonp() {
+        return new Promise(function (resolve, reject) {
+            jsonp(url.content, function (err, data) {
+            	console.log('in contentApi', data)
+                if (err) {
+                    return reject(err)
+                } else {
+                    return resolve(data)
                 }
             })
         }).then((response) => {
@@ -82,6 +101,7 @@ export const contentApi = {
         })
     }
 }
+// 具体内容 jsonp
 // export const contentApi = {
 //     content() {
 //         return new Promise(function (resolve, reject) {
@@ -101,21 +121,45 @@ export const contentApi = {
 
 // 各个分类的具体数据 saveJsonp
 export const dataApi = {
-    data(api) {
+    dataByPost(api) {
         return new Promise(function (resolve, reject) {
             safeJSONP({url:api}, function (success, data) {
+                console.log('in dataApi success', success)
                 console.log('in dataApi', data)
-                if (data) {
+                if (success) {
                     return resolve(data)
                 } else {
-                    return reject({})
+                    return reject({err: 'have err'})
                 }
             })
         }).then((response) => {
+            console.log('dataByPost response', response)
             return response.data
+        }, function(err){
+            console.log('dataByPost err', err)
+            return err;
+        })
+    },
+    dataByJsonp(api) {
+        return new Promise(function (resolve, reject) {
+            jsonp(api, function (err, data) {
+                console.log('in dataApi', data)
+                if (err) {
+                    return reject(err)
+                } else {
+                    return resolve(data)
+                }
+            })
+        }).then((response) => {
+            console.log('dataByJsonp response', response)
+            return response.data
+        }, function(err){
+            console.log('dataByJsonp err', err)
+            return err;
         })
     }
 }
+// 各个分类的具体数据 jsonp
 // export const dataApi = {
 //     data(api) {
 //         return new Promise(function (resolve, reject) {
