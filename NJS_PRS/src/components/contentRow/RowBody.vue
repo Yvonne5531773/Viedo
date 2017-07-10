@@ -1,16 +1,21 @@
 <template>
 	<div id="main" class="b-body">
-		<div ref="listWrapper">
-			<ul class="vidbox v-list square-scene">
-				<RowItem :item="item" v-for="(item, index) in list" v-if='list'></RowItem>
+		<div ref="listWrapper" >
+			<ul class="vidbox v-list square-scene" v-if='list&&list.length!==0'>
+				<RowItem :item="item" v-for="(item, index) in list" ></RowItem>
+			</ul>
+			<ul class="vidbox v-list square-scene" v-if='isMyTv&&myTv&&myTv.length!==0'>
+				<RowItem :item="item" v-for="(item, index) in myTv"></RowItem>
 			</ul>
 		</div>
+		<p class="noMyTvTips" v-if="isMyTv&&myTv.length===0">添加你喜欢的电视剧</p>
 	</div>
 </template>
 
 <script>
 import RowItem from 'components/contentRow/RowItem'
 import { dataApi } from 'api'
+import _ from 'lodash'
 
 export default {
     data() {
@@ -22,6 +27,12 @@ export default {
 		api: {
 			type: String
 		},
+		myTv: {
+		    type: Array
+		},
+		isMyTv: {
+		    type: Boolean
+		}
 	},
     watch: {
         api(val, oldVal) {
@@ -39,11 +50,14 @@ export default {
     },
     methods: {
         getItemData() {
-            dataApi.data(this.api).then((response) => {
-                console.log('getItemData response',response.list)
-                this.list = response.list;
-            })
+            if(!_.isEmpty(this.api)){
+                dataApi.data(this.api).then((response) => {
+                    console.log('getItemData response',response.list)
+                    this.list = response.list;
+                })
+			}else{
 
+			}
         }
     },
 	components: {
@@ -57,9 +71,12 @@ export default {
 		margin-right -20px
 		clear both
 		.v-list
-			width 125%
-			height 530px
+			height 795px
 			overflow hidden
-			padding-top 20px
+			padding-top 30px
 			margin-left 45px
+	.noMyTvTips
+		padding 44px
+		font-size 18px
+		font-weight 600
 </style>

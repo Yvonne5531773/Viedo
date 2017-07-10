@@ -1,5 +1,6 @@
 <template>
 	<div class="nav-side" :class="{customizing: isSort}" ref="navSide">
+		<p style="padding: 31px;font-size: 28px;font-weight: 900;">视频中心</p>
 		<transition name="fade">
 			<div v-if="isSort">
 				<div class="tip"></div>
@@ -12,6 +13,7 @@
 					<div class="name"></div>
 				</div>
 				<div class="n-i sotrable" :class="[{'on': current===index && !isSort}, {'drag': isDrag && current === index}]"  @click="setEnable(index)" @mousedown="dragStart($event, index)" :style="dragStyles">
+					<img src=""/>
 					<div class="name">{{item.name}}</div>
 				</div>
 				<div v-if="isDrag && index === replaceItem && replaceItem > dragId" class="n-i sotrable">
@@ -22,14 +24,6 @@
 				<div class="sortable-item-name"></div>
 			</li>
 
-			<!--<div class="n-i customize" @click="sort">-->
-				<!--<i class="n-icon-sort"></i>-->
-				<!--<p>排序</p>-->
-			<!--</div>-->
-		</div>
-		<div class="n-i gotop" >
-			<div class="s-line"></div>
-			<div class="btn_gotop" @click="scrollToTop(time)"></div>
 		</div>
 	</div>
 </template>
@@ -145,7 +139,7 @@ export default {
 					offsetTop: offsetTop,
 					height: element.offsetHeight
 				}
-			}) 
+			})
 		},
 		setEnable(index) {
             console.log('in setEnable index', index)
@@ -191,7 +185,7 @@ export default {
 //				this.$refs.navSide.style.top = "280px"
 //				this.init()
 //			}
-            this.$refs.navSide.style.top = "280px"
+            this.$refs.navSide.style.top = "76px"
             this.init()
 			for (let i = 0; i < this.data.length; i++) {
 				if (this.scrollTop >= this.data[i].offsetTop - this.offset - this.tmpOffest) {
@@ -237,21 +231,24 @@ export default {
 <style lang="stylus" scoped>
 	.nav-side
 		position fixed
-		width 65px
+		width 175px
 		text-align center
-		top 280px
+		top 76px
 		left auto
-		z-index 1000
+		min-height 100%
+		background-color #ffffff
+		border-right 1px solid #dfe6ec
+		box-shadow 0 1px 14px rgba(0,0,0,0.1)
 		&.customizing
 			z-index 10010
 			.n-i.sotrable
 				cursor move
 		.nav-list
 			position relative
-			background-color #f6f9fa
-			border 1px solid #e5e9ef
+			/*background-color #f6f9fa*/
+			/*border 1px solid #e5e9ef*/
 			overflow hidden
-			border-radius 4px
+			/*border-radius 4px*/
 			z-index 233
 			.n-i
 				cursor pointer
@@ -259,7 +256,7 @@ export default {
 					border-top 0
 				&.on
 					.name
-						background-color #00a1d6
+						background-color #bfcbd9
 						color #fff
 				&.customize
 					padding 8px 0
@@ -279,10 +276,12 @@ export default {
 				.name
 					height 32px
 					line-height 32px
+					font-size 15px
+					padding 20px;
 					transition .1s linear
 					transition-property background-color, color
 					&:hover
-						background-color #00a1d6
+						background-color #bfcbd9
 						color #fff
 		.gotop
 			cursor pointer

@@ -11,27 +11,32 @@
 				<span class="b-tab-text">{{item.area}}</span>
 			</li>
 		</ul>
-		<div class="b-link-more">
+		<div class="b-link-more" v-if='category!==`myTv`'>
 			<a href="">
 				更多<i class="b-icon b-icon-arrow-r"></i>
 			</a>
 		</div>
-		<RowBody :api="api"></RowBody>
+		<RowBody :api="api" :myTv="myTv" :isMyTv="isMyTv"></RowBody>
 	</div>
 </template>
 
 <script>
 import RowBody from 'components/contentRow/RowBody'
+import { myTvApi } from 'api'
 
 export default {
+
     data() {
         return {
             count: 0,
             tabCount: 0,
-			api: this.row[0].area_api,
+			api: this.row[0]? this.row[0].area_api:'',
             isOrigin: false,
+			myTv: [],
+			isMyTv: false,
         }
 	},
+
 	props: {
 		category: {
 			type: String
@@ -40,7 +45,19 @@ export default {
             type: Array
         },
 	},
+    mounted() {
+        if(this.category === 'myTv'){
+            this.isMyTv = true
+            this.getMyTv()
+		}
+    },
     methods: {
+        getMyTv(){
+            myTvApi.getMyTv().then((response) => {
+                console.log('getMyTv response', response)
+                this.myTv = response;
+            })
+		},
         cutTab(index) {
             this.tabCount = index;
             this.api = this.row[index].area_api;
@@ -55,6 +72,9 @@ export default {
 			let title = '未知标题';
 			if (this.category) {
 				switch(this.category) {
+                    case 'myTv':
+                        title = '我的追剧'
+                        break
                     case 'tv':
                         title = '热播好剧'
                         break
@@ -106,14 +126,15 @@ export default {
 			h2
 				font-size 24px!important
 				line-height 24px
-				font-weight normal
+				font-weight bolder
 				padding-bottom 5px
-				border-bottom 3px solid
+				/*border-bottom 3px solid*/
 		.b-slt-tab
 			position relative
 			display inline-block
 			vertical-align middle
 			margin-left 20px
+			margin-top 4px
 			float left
 			li
 				float left
@@ -149,7 +170,9 @@ export default {
 						border-left-color transparent
 						border-right-color transparent
 		.b-link-more
-			float right
+			/*float right*/
+			position absolute
+			left 1180px
 			text-align center
 			margin-left 10px
 			a

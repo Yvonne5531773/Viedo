@@ -1,0 +1,31 @@
+{
+   "background": {
+      "page": "background.html",
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "icons/16.png"
+      },
+      "default_title": "追剧"
+   },
+   "content_scripts": [ {
+      "js": [ "backtotop.js" ],
+      "matches": [ "http://tv.duba.com/tvdetail/*","http://tv.duba.com/*",
+	  "http://tv.duba.com/cartoondetail/*",
+	  "http://tv.duba.com/varietydetail/*"]
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval' 'unsafe-inline'; object-src 'self'",
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "devtools_page": "devtools.html",
+   "icons": {
+      "128": "icons/128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqsw+BEysk68uZba8jFSWfMxVIk+zisklyAZMaDkfW6wJgB79MSFUdCq+a+1Q/SKeM9htMM0hZ6KLSW9dZFWQyEBuSTcZ3uiznyGn+P/HH0kQPGzTAOCppZUjMN6zGIPh1X6KPTR6t/i/L3SbI8bByUVJcfjNogOYKC5jWF5FWHPxTGzlgC5HOqX7CH3deZabQu5NiVNzZZeOKLinXSgabqN1BU18RKI5MyLm0sYyNhtBdwa2JZL+6du+ruKI3IJxIC+hybWe0eiqrHRUi3L8Exq4tO4Umj8m1WL6koMBb1aJj0MUfDd8WMbPz5XZeso9F3xJmwjonestoDp9uWENPwIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_name__",
+   "permissions": [ "http://*/*", "http://tv.duba.com"],
+   "version": "1.1.5.5",
+   "web_accessible_resources": [ "newtab.txt", "newtab_click.txt" ]
+}

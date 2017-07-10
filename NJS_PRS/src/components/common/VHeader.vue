@@ -1,25 +1,8 @@
 <template>
-  <div class="header" style="background-image: url('');background-color: #eff2f7">
+  <div class="header" style="background-image: url('');background-color:#f5f5f5;position:fixed;width:100%;box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);z-index:999;">
   	<div class="header-layer"></div>
   	<div class="h-center">
-        <el-dropdown menu-align='start' style="position: absolute;top:65px;left: 817px;padding: 6px 10px;background-color: rgb(239, 242, 247);color: #1f2d3d;border-radius: 4px;font-size:20px;">
-            <i class="el-icon-menu"></i>
-            <el-dropdown-menu slot="dropdown">
-                <div style="padding: 9px;">
-                    <span>自动加入追剧</span><el-switch style="margin-left: 30px;" v-model="value2" on-color="#13ce66" off-color="#ff4949"></el-switch>
-                </div>
-                <div style="padding: 9px;">
-                    <span>新剧提醒</span><el-switch style="margin-left: 62px;" v-model="value2" on-color="#13ce66" off-color="#ff4949"></el-switch>
-                </div>
-                <!--<el-dropdown-item style="cursor: auto;">-->
-                    <!--<span>自动加入追剧</span><el-switch style="margin-left: 30px;" v-model="value2" on-color="#13ce66" off-color="#ff4949">-->
-                <!--</el-switch></el-dropdown-item>-->
-                <!--<el-dropdown-item style="cursor: auto;">-->
-                    <!--<span>新剧提醒</span><el-switch style="margin-left: 62px;" v-model="value2" on-color="#13ce66" off-color="#ff4949">-->
-                <!--</el-switch></el-dropdown-item>-->
-            </el-dropdown-menu>
-        </el-dropdown>
-      <search class="msearch"></search>
+      <!--<search class="msearch"></search>-->
   	</div>
     <!--<VMenu></VMenu>-->
   </div>

@@ -16,9 +16,10 @@
 	.search
 		z-index 100
 		position absolute
-		top calc(120px - (56px - 32px) - 32px)
+		top calc(135px - (56px - 32px) - 32px)
 		width 268px
 		height 32px
+		left 800px
 		background-color rgba(0, 0, 0, 0.12)
 		border-radius 6px
 		#searchform

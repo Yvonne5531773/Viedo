@@ -3,20 +3,20 @@
     <!--<TopContainer></TopContainer>-->
     <VHeader></VHeader>
     <!--<div class="fillcontain">-->
-    <!--<el-row style="height: 100%;">-->
-      <!--<el-col :span="3"  style="min-height: 100%; background-color: #324057;">-->
-        <!--&lt;!&ndash;<el-menu style="min-height: 100%;" theme="dark" router>&ndash;&gt;-->
-          <!--&lt;!&ndash;<el-menu-item index="1"><i class="el-icon-menu"></i>首页</el-menu-item>&ndash;&gt;-->
-          <!--&lt;!&ndash;<el-menu-item index="2"><i class="el-icon-menu"></i>首页</el-menu-item>&ndash;&gt;-->
-          <!--&lt;!&ndash;<el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>&ndash;&gt;-->
-          <!--&lt;!&ndash;<el-menu-item index="4"><i class="el-icon-menu"></i>首页</el-menu-item>&ndash;&gt;-->
-          <!--&lt;!&ndash;<el-menu-item index="5"><i class="el-icon-menu"></i>首页</el-menu-item>&ndash;&gt;-->
-        <!--&lt;!&ndash;</el-menu>&ndash;&gt;-->
-      <!--</el-col>-->
-      <!--<el-col :span="21" style="height: 100%;overflow: auto;">-->
-        <!--<VContent :rows="rows"></VContent>-->
-      <!--</el-col>-->
-    <!--</el-row>-->
+      <!--<el-row style="height: 100%;">-->
+        <!--<el-col :span="3"  style="min-height: 100%; background-color: #324057;">-->
+          <!--<el-menu style="min-height: 100%;" theme="dark" router>-->
+            <!--<el-menu-item index="1"><i class="el-icon-menu"></i>首页</el-menu-item>-->
+            <!--<el-menu-item index="2"><i class="el-icon-menu"></i>首页</el-menu-item>-->
+            <!--<el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>-->
+            <!--<el-menu-item index="4"><i class="el-icon-menu"></i>首页</el-menu-item>-->
+            <!--<el-menu-item index="5"><i class="el-icon-menu"></i>首页</el-menu-item>-->
+          <!--</el-menu>-->
+        <!--</el-col>-->
+        <!--<el-col :span="21" style="height: 100%;overflow: auto;">-->
+          <!--<VContent :rows="rows"></VContent>-->
+        <!--</el-col>-->
+      <!--</el-row>-->
     <!--</div>-->
     <VContent :rows="rows"></VContent>
     <NavSide :options="options" v-on:change="isShowMask"></NavSide>

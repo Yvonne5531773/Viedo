@@ -11,6 +11,14 @@ const state = {
 	rank: {}
 }
 
+const myTv = {
+    category: 'myTv',
+	// item: [{area:'全部'}, {area:'电视剧'}, {area:'电影'}, {area:'综艺'}, {area:'动漫'}, {area:'直播'},],
+    item: [],
+    name: '我的追剧',
+    b_id: 'b_myTv',
+}
+
 const getters = {
 	rows: state => state.rows,
 	sortKeys: state => state.sortKeys,
@@ -58,6 +66,7 @@ const mutations = {
 
 	},
 	[TYPE.CONTENT_SUCCESS] (state, response) {
+        state.rows.push(myTv)
         for (let i in response) {
             let category = i;
             let rowItem = {
@@ -70,16 +79,7 @@ const mutations = {
             state.rows.push(rowItem)
         }
 		console.log('mutations state.rows', state.rows)
-		// for(let key of state.sortKeys) {
-		// 	// console.log(JSON.stringify(Object.values(response[key])))
-		// 	let rowItem = {
-		// 		categoty: 0,
-		// 		key: response[key],
-		// 		data: Object.values(response[key])
-		// 	}
-		// 	// state.rows.push(rowItem)
-		// 	state.rows.push(Object.values(response[key]))
-		// }
+
 	},
 	[TYPE.CONTENT_FAILURE] (state) {
 

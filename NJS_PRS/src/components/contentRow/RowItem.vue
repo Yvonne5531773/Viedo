@@ -6,15 +6,15 @@
 				<!-- 背景图片 -->
 				<div class=image>
 					<img class="front face" v-lazy="item.coverImage" style='background-size:cover;'/>
-					<div class=overlay>
-						<div class=edit>
-							<a class=edit-same target=_blank href='' style="margin-bottom: 10px">
-								<!--<em class=eqf-eye style=font-size:20px></em>-->
-								<!--<span>加入追剧</span>-->
-								<el-button type="warning" size="small">加入追剧</el-button>
-							</a>
-						</div>
-					</div>
+					<!--<div class=overlay>-->
+						<!--<div class=edit>-->
+							<!--<a class=edit-same target=_blank href='' style="margin-bottom: 10px">-->
+								<!--&lt;!&ndash;<em class=eqf-eye style=font-size:20px></em>&ndash;&gt;-->
+								<!--&lt;!&ndash;<span>加入追剧</span>&ndash;&gt;-->
+								<!--<el-button type="warning" size="small">加入追剧</el-button>-->
+							<!--</a>-->
+						<!--</div>-->
+					<!--</div>-->
 				</div>
 
 				<div class="back">
@@ -33,7 +33,7 @@
 				</div>
 			</a>
 			<!-- 下部分 -->
-			<div :title="item.title" target="_blank" class=project-info style="padding: 13px 0px">
+			<div :title="item.title" target="_blank" class=project-info style="padding: 13px 0px;height:170px;opacity:0.8;">
 				<p class=ellipsis>{{item.title}}</p>
 			</div>
 			<!--<a :title="item.title" target="_blank">-->
@@ -69,11 +69,11 @@
 		box-shadow 0 1px 1px rgba(0,0,0,.1)
 	.item-li
 		float left
-		margin 0 20px 20px 0
+		margin 0 50px 30px 0
 		.v
 			position relative
-			width 160px
-			height 254px
+			width 200px
+			height 380px
 			font-size 12px
 			overflow hidden
 			transition all .3s linear
@@ -165,7 +165,7 @@
 					opacity 1
 				img
 					width 100%
-					height 190px
+					height 300px
 					display block
 					margin 0 auto
 					outline 0

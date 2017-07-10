@@ -52,7 +52,6 @@ export default {
 		zoom 1
 		.b-l
 			float left
-			width 700px
 			margin-bottom 250px
 		.b-r
 			float right 
